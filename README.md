@@ -46,6 +46,7 @@ REST APIs are secured using OAuth.
 To test the application, we would need to get the oauth access token.
 
 Client Id: pizza-trusted-client
+
 Client secret: secret
 
 Authorization: cGl6emEtdHJ1c3RlZC1jbGllbnQ6c2VjcmV0 - base64 encoded
