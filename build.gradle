@@ -1,0 +1,51 @@
+buildscript {
+    ext { springBootVersion = '1.5.6.RELEASE' }
+    repositories { mavenCentral() }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'pizzaapp'
+    version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories { mavenCentral() }
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-devtools')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.security.oauth:spring-security-oauth2')
+    compile group: 'com.google.guava', name: 'guava', version: '19.0'
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.6.1'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.6.1'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.195'
+    compile group: 'org.flywaydb', name: 'flyway-core', version: '3.0'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.8.9'
+
+    compile project(':google-api-client')
+    compile project(':pizza-api-client')
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.12'
+
+    testCompile('org.apache.httpcomponents:httpclient:4.5.1')
+    testCompile group: 'org.spockframework', name: 'spock-core', version: '1.1-groovy-2.4'
+    testCompile group: 'org.spockframework', name: 'spock-spring', version: '1.1-groovy-2.4'
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+}
+
+springBoot {
+    executable = true
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza Heaven",
+    "address1": "Kungsgatan 1",
+    "address2": "111 43 Stockholm",
+    "latitude": 59.336078,
+    "longitude": 18.071807
+  },
+  {
+    "id": 2,
+    "name": "Pizzeria Apan",
+    "address1": "Långholmsgatan 34",
+    "address2": "117 33 Stockholm",
+    "latitude": 59.315709,
+    "longitude": 18.033507
+  }
+]

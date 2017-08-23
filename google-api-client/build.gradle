@@ -1,0 +1,26 @@
+buildscript {
+    repositories { mavenCentral() }
+}
+
+ext {
+    springBootVersion = '1.5.6.RELEASE'
+    retrofitVersion = '2.3.0'
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories { mavenCentral() }
+
+dependencies {
+    compile group: 'org.springframework.boot', name :'spring-boot-starter'
+    compile group: 'com.squareup.retrofit2', name: 'retrofit', version: "${retrofitVersion}"
+    compile group: 'com.squareup.retrofit2', name: 'converter-gson', version: "${retrofitVersion}"
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.6'
+    compile group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

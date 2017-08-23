@@ -1,0 +1,55 @@
+server:
+  port: 8080
+  ssl:
+    key-alias: selfsigned
+    key-password: pizzapp
+    key-store: classpath:keystore.jks
+    key-store-provider: SUN
+    key-store-type: JKS
+
+management:
+  security:
+    enabled: false
+
+security:
+  oauth2:
+    resource: http
+
+integration:
+  pizzaapi:
+    url: https://private-anon-bf2f6ff0e0-pizzaapp.apiary-mock.com/
+  google:
+    key: AIzaSyDpIKur5uAcRwmKLX2Wh795tVnSBnLLgZA
+    geocode-api:
+      url: https://maps.googleapis.com/maps/api/geocode/
+    distance-api:
+      url: https://maps.googleapis.com/maps/api/distancematrix/
+
+restaurant:
+  radius: 15000
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:pizza_db;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
+    username: test
+    password: test
+    driverClassName: org.h2.Driver
+    testOnBorrow: true
+    validationQuery: SELECT 1
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false
