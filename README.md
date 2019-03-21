@@ -1,6 +1,6 @@
 # PizzaApp
 
-PizzaApp is backend application built using spring boot for ordering pizza online. Implemented authentication and authorization using OAuth2.
+PizzaApp is a backend application built using spring boot for ordering pizza online. Implemented authentication and authorization using OAuth2.
 
 ##APIs
 
